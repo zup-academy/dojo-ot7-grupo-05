@@ -1,4 +1,4 @@
-package model;
+package br.com.zup.edu.nossositedeviagens.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

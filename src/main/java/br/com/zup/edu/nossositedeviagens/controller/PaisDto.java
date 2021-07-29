@@ -1,6 +1,6 @@
 package br.com.zup.edu.nossositedeviagens.controller;
 
-import model.Pais;
+import br.com.zup.edu.nossositedeviagens.model.Pais;
 
 public class PaisDto {
 

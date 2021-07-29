@@ -1,6 +1,6 @@
 package br.com.zup.edu.nossositedeviagens.controller.form;
 
-import model.Pais;
+import br.com.zup.edu.nossositedeviagens.model.Pais;
 
 import javax.validation.constraints.NotBlank;
 
