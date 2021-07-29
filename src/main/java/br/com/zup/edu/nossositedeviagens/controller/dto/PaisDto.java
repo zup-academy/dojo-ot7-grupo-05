@@ -1,4 +1,4 @@
-package br.com.zup.edu.nossositedeviagens.controller;
+package br.com.zup.edu.nossositedeviagens.controller.dto;
 
 import br.com.zup.edu.nossositedeviagens.model.Pais;
 

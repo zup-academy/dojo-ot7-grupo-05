@@ -1,5 +1,6 @@
 package br.com.zup.edu.nossositedeviagens.controller;
 
+import br.com.zup.edu.nossositedeviagens.controller.dto.PaisDto;
 import br.com.zup.edu.nossositedeviagens.controller.form.PaisForm;
 import br.com.zup.edu.nossositedeviagens.repository.PaisRepository;
 import br.com.zup.edu.nossositedeviagens.model.Pais;

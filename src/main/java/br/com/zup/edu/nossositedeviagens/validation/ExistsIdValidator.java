@@ -10,8 +10,6 @@ import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.util.Assert;
 
-import br.com.zupacademy.thiago.casadocodigo.controller.validation.ExistsId;
-
 public class ExistsIdValidator implements ConstraintValidator<ExistsId, Object>{
 	
 	@PersistenceContext

@@ -2,6 +2,8 @@ package br.com.zup.edu.nossositedeviagens.controller;
 
 import java.net.URI;
 
+import br.com.zup.edu.nossositedeviagens.controller.dto.CompanhiaDto;
+import br.com.zup.edu.nossositedeviagens.repository.CompanhiaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -21,10 +23,12 @@ public class CompanhiaController {
     @Autowired
     private PaisRepository paisRepository;
 
+    @Autowired
+    private CompanhiaRepository companhiaRepository;
 
     @PostMapping("/cadastrar")
     public ResponseEntity<CompanhiaDto> cadastrar(@RequestBody @Validated CompanhiaForm form){
-        Companhia companhia = form.toModel();
+        Companhia companhia = form.toModel(paisRepository);
         companhiaRepository.save(companhia);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(companhia.getId()).toUri();
