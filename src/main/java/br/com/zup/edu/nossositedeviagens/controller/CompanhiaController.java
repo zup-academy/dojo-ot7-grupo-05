@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import br.com.zup.edu.nossositedeviagens.controller.form.CompanhiaForm;
 import br.com.zup.edu.nossositedeviagens.model.Companhia;
 import br.com.zup.edu.nossositedeviagens.repository.PaisRepository;
 
