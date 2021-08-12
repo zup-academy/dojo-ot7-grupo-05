@@ -32,6 +32,7 @@ public class RotaController {
     public ResponseEntity<Void> cadastrar(@Valid @RequestBody RotaForm rotaForm) {
 
         Rota rota = rotaForm.toModel(aeroportoRepository);
+        rotaRepository.save(rota);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(rota.getId()).toUri();
