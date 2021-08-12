@@ -47,7 +47,7 @@ public class RotaForm {
     }
 
     private String resolveNome(String nome, Aeroporto origem, Aeroporto destino) {
-        if (nome == null || nome.isEmpty()) {
+        if (nome == null || nome.isBlank()) {
             return origem.getNome() + "-" + destino.getNome();
         }
 
