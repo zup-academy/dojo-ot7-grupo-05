@@ -20,6 +20,7 @@ import br.com.zup.edu.nossositedeviagens.repository.PaisRepository;
 @RestController
 @RequestMapping("/companhias")
 public class CompanhiaController {
+	
     @Autowired
     private PaisRepository paisRepository;
 

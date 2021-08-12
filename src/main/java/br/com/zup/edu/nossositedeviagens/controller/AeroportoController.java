@@ -12,24 +12,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import br.com.zup.edu.nossositedeviagens.controller.dto.PaisDto;
-import br.com.zup.edu.nossositedeviagens.controller.form.PaisForm;
-import br.com.zup.edu.nossositedeviagens.model.Pais;
+import br.com.zup.edu.nossositedeviagens.controller.form.AeroportoForm;
+import br.com.zup.edu.nossositedeviagens.model.Aeroporto;
+import br.com.zup.edu.nossositedeviagens.repository.AeroportoRepository;
 import br.com.zup.edu.nossositedeviagens.repository.PaisRepository;
 
 @RestController
-@RequestMapping("/paises")
-public class PaisController {
+@RequestMapping("/aeroportos")
+public class AeroportoController {
+	
     @Autowired
     private PaisRepository paisRepository;
 
+    @Autowired
+    private AeroportoRepository aeroportoRepository;
 
     @PostMapping("/cadastrar")
-    public ResponseEntity<PaisDto> cadastrar(@RequestBody @Valid PaisForm form){
-        Pais pais = form.toModel();
-        paisRepository.save(pais);
+    public ResponseEntity<?> cadastrar(@RequestBody @Valid AeroportoForm form){
+        Aeroporto aeroporto = form.toModel(paisRepository);
+        aeroportoRepository.save(aeroporto);
 
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(pais.getId()).toUri();
-        return ResponseEntity.created(uri).body(new PaisDto(pais));
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(aeroporto.getId()).toUri();
+        return ResponseEntity.created(uri).build();
     }
 }

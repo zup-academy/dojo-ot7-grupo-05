@@ -9,4 +9,8 @@ public class PaisDto {
     public PaisDto(Pais pais){
         this.nome = pais.getNome();
     }
+
+	public String getNome() {
+		return nome;
+	}
 }
