@@ -1,5 +1,6 @@
 package br.com.zup.edu.nossositedeviagens.controller;
 
+import br.com.zup.edu.nossositedeviagens.model.Voo;
 import br.com.zup.edu.nossositedeviagens.repository.RotaRepository;
 import br.com.zup.edu.nossositedeviagens.repository.VooRepository;
 import org.springframework.beans.factory.annotation.Autowired;

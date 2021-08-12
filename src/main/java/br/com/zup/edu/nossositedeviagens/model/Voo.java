@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -14,5 +16,6 @@ public class Voo {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Map<Rota, TipoRota> tipoRota
+    @NotNull
+    private List<RotaDeVoo> rotaDeVoo;
 }

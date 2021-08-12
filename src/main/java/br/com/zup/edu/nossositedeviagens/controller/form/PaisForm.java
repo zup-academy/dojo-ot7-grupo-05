@@ -8,13 +8,7 @@ public class PaisForm {
     @NotBlank
     private String nome;
 
-    public String getNome() {
-		return nome;
-	}
-
-	public Pais toModel() {
+    public Pais toModel() {
         return new Pais(this.nome);
     }
-    
-    
 }
