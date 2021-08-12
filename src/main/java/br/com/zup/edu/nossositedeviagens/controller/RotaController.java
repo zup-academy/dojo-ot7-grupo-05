@@ -7,11 +7,13 @@ import br.com.zup.edu.nossositedeviagens.repository.AeroportoRepository;
 import br.com.zup.edu.nossositedeviagens.repository.RotaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.net.URI;
 
@@ -25,6 +27,8 @@ public class RotaController {
     @Autowired
     private AeroportoRepository aeroportoRepository;
 
+    @Transactional
+    @PostMapping("/cadastrar")
     public ResponseEntity<Void> cadastrar(@Valid @RequestBody RotaForm rotaForm) {
 
         Rota rota = rotaForm.toModel(aeroportoRepository);
