@@ -31,6 +31,9 @@ public class Rota {
     @Positive
     private Duration duracao;
 
+    public Rota() {
+    }
+
     public Rota(String nome, Aeroporto aeroportoOrigem, Aeroporto aeroportoDestino, Duration duracao) {
         this.nome = nome;
         this.aeroportoOrigem = aeroportoOrigem;
