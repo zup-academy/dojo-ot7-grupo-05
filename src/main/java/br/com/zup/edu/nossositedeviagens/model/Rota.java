@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
+import java.time.Duration;
 
 @Entity
 public class Rota {
@@ -28,9 +29,9 @@ public class Rota {
      */
     @NotNull
     @Positive
-    private Long duracao;
+    private Duration duracao;
 
-    public Rota(String nome, Aeroporto aeroportoOrigem, Aeroporto aeroportoDestino, Long duracao) {
+    public Rota(String nome, Aeroporto aeroportoOrigem, Aeroporto aeroportoDestino, Duration duracao) {
         this.nome = nome;
         this.aeroportoOrigem = aeroportoOrigem;
         this.aeroportoDestino = aeroportoDestino;

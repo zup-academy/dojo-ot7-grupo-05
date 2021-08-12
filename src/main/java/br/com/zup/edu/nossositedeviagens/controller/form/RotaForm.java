@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
+import java.time.Duration;
 
 public class RotaForm {
 
@@ -40,12 +41,16 @@ public class RotaForm {
 
         Aeroporto origem = aeroportoRepository.findById(aeroportoOrigemId).orElseThrow();
         Aeroporto destino = aeroportoRepository.findById(aeroportoDestinoId).orElseThrow();
+        String nomeRota = resolveNome(nome, origem, destino);
 
-        String nomeRota = nome;
+        return new Rota(nomeRota, origem, destino, Duration.ofMinutes(duracao));
+    }
+
+    private String resolveNome(String nome, Aeroporto origem, Aeroporto destino) {
         if (nome == null || nome.isEmpty()) {
-            nomeRota = origem.getNome() + "-" + destino.getNome();
+            return origem.getNome() + "-" + destino.getNome();
         }
 
-        return new Rota(nomeRota, origem, destino, duracao);
+        return nome;
     }
 }
